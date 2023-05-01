@@ -2,7 +2,7 @@ import React from 'react';
 
 const ImageCard = ({ image, deleteHandler }) => {
     return (
-        <div className="border-2 py-12 md:py-16 rounded-md">
+        <div className="border-2 p-12 md:p-16 rounded-md">
             <div className="flex justify-center items-center my-4">
                 <img src={image?.croppedImageUrl} className=" rounded-md" alt="upload" />
             </div>
