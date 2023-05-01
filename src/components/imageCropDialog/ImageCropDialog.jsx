@@ -49,7 +49,7 @@ const ImageCropDialog = ({ imageURL, onCancel, setCroppedImageFor, resetImage })
   return (
     <div className='mx-auto'>
 
-      <div>
+      <div className='p-4 bg-gray-600'>
         <Cropper
           image={imageURL}
           zoom={zoom}

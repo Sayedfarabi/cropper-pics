@@ -2,14 +2,15 @@ import { useState } from "react";
 import ImageCropDialog from "./components/imageCropDialog/ImageCropDialog";
 import ImageCard from "./components/imageCard/ImageCard";
 import InputImage from "./components/input-image/InputImage";
+import Navbar from "./components/navbar/Navbar";
+import Banner from "./components/banner/Banner";
+import FeatureSection from "./components/feature-section/FeatureSection";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
-
   const [images, setImages] = useState([]);
-
   const [selectedImages, setSelectedImages] = useState([]);
-
 
   const onSelectFile = (event) => {
     const selectedFiles = event.target.files;
@@ -47,16 +48,15 @@ function App() {
   };
 
   function deleteHandler(image) {
-    // console.log(image);
     setImages(images?.filter((e) => e.croppedImageUrl !== image));
-    // URL.revokeObjectURL(image);
   }
 
 
 
   return (
     <div>
-
+      <Navbar></Navbar>
+      <Banner></Banner>
       <InputImage onSelectFile={onSelectFile}></InputImage>
 
       <div className="py-8 md:py-12 grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
@@ -92,6 +92,8 @@ function App() {
           null
         }
       </div>
+      <FeatureSection></FeatureSection>
+      <Footer></Footer>
     </div>
   );
 }
